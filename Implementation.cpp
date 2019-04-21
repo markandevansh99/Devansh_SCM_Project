@@ -478,4 +478,108 @@ Node n;
 
 
 
+//DOUBLY LINKED LIST
 
+ 
+
+void  doubly()
+
+{
+
+ 
+
+struct node
+
+{
+
+    int info;
+
+    struct node *next;
+
+    struct node *prev;
+
+}*start;
+
+ 
+
+class double_llist
+
+{
+
+    public:
+
+        void create_list(int value);
+
+        void add_begin(int value);
+
+        void add_after(int value, int position);
+
+        void delete_element(int value);
+
+        void search_element(int value);
+
+        void display_dlist();
+
+      
+
+        double_llist()
+
+        {
+
+            start = NULL; 
+
+        }
+
+};
+
+ 
+
+ 
+
+ 
+
+  /*
+
+ * Create Double Link List
+
+ */
+
+void double_llist::create_list(int value)
+
+{
+
+    struct node *s, *temp;
+
+    temp = new(struct node);
+
+    temp->info = value;
+
+    temp->next = NULL;
+
+    if (start == NULL)
+
+    {
+
+        temp->prev = NULL;
+
+        start = temp;
+
+    }
+
+    else
+
+    {
+
+        s = start;
+
+        while (s->next != NULL)
+
+            s = s->next;
+
+        s->next = temp;
+
+        temp->prev = s;
+
+    }
+
+}
