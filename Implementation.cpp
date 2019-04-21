@@ -388,3 +388,94 @@ void stack ::pop()
 
 }
 
+void stack:: display()
+
+{
+
+if(top==NULL){
+
+        cout<<"List is empty!"<<endl;
+
+        return;
+
+    }
+
+    struct Node *temp=top;
+
+    while(temp!=NULL){
+
+        cout<<temp->value<<" ";
+
+        cout<<endl;
+
+        temp=temp->next;
+
+    }
+
+    cout<<endl;
+
+}
+
+
+
+Node n;
+
+            cout<<"Enter the element to be pushed : \n";
+
+            cin>>n.value;
+
+
+
+            //push data into the stack
+
+            s.push(n.value);
+
+
+
+Node n;
+
+            cout<<"Enter the element to be pushed : \n";
+
+            cin>>n.value;
+
+
+
+            //push data into the stack
+
+            s.push(n.value);
+
+
+
+Node n;
+
+            cout<<"Enter the element to be pushed : \n";
+
+            cin>>n.value;
+
+
+
+            //push data into the stack
+
+            s.push(n.value);
+
+
+
+
+
+            s.pop();
+
+
+
+
+
+            s.display();
+
+
+
+
+
+}
+
+
+
+
