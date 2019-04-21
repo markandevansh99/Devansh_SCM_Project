@@ -46,7 +46,9 @@ are pushed respectively from their branches and now the collaborators will send 
 
                                                  MERGING
                                                  
- 1. I have accepted the pull request from Anurag Mor and I have merged it from the Master Branch as the code was very well written with proper intendation as well
+ 1. I have accepted the pull request from Anurag Mor and I have merged it from the Master Branch as the code was very well written with proper intendation as well.
+ 
+ 2. I have accepted the pull request from Aman Gupta and I have merged his branch (aman) from the master branch as his code helped me in making my program even more updated and gave it a better shape.
 
 
 
