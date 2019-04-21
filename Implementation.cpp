@@ -244,6 +244,67 @@ void List::delet()
 }
 
 
+// Now, continuing and implementing Display() and Search() in Singly Linked list
+
+
+void List::display()
+{
+    Node *temp=first;
+    if(temp==NULL)
+    {
+        cout<<"\nList is Empty";
+    }
+    while(temp!=NULL)
+    {
+        cout<<temp->info;
+        cout<<"-->";
+        temp=temp->next;
+    }
+    cout<<"NULL";
+}
+void List::search()
+{
+    int value,pos=0;
+    bool flag=false;
+    if(first==NULL)
+    {
+        cout<<"List is Empty";
+        return;
+    }
+    cout<<"Enter the Value to be Searched:";
+    cin>>value;
+    Node *temp;
+    temp=first;
+    while(temp!=NULL)
+    {
+        pos++;
+        if(temp->info==value)
+        {
+            flag=true;
+            cout<<"Element"<<value<<"is Found at "<<pos<<" Position";
+            return;
+        }
+        temp=temp->next;
+    }
+    if(!flag)
+    {
+        cout<<"Element "<<value<<" not Found in the List";
+    }
+}
+
+create();
+insert();
+insert();
+insert();
+delet();
+display();
+search();
+
+}
+
+}
+
+
 
 
 
