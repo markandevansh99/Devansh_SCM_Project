@@ -53,4 +53,8 @@ are pushed respectively from their branches and now the collaborators will send 
  3. Now, the final and last merge is complete. I have accepted the pull request from Animesh Jain to merge his branch Animesh_test and all the 3 branches are now merged into the master.
 
 
+                                                  THE END
+                                                
+   I thank all the three contributors of the project for their constant support and I really like the concept and techniques that they have used in their code. Thank You
+
 
