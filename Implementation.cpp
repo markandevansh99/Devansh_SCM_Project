@@ -305,6 +305,26 @@ search();
 }
 
 
+//It's Animesh's code 
 
+//STACK ARRAY
+
+void stackarr()
+
+{
+
+int push(int[],int&,int);
+
+int pop(int[],int&);
+
+void display(int[],int);
+
+const int size=50;
+
+
+
+
+
+ int stack[size],item,top=-1,res,ch;
 
 
