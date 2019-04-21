@@ -583,3 +583,331 @@ void double_llist::create_list(int value)
     }
 
 }
+
+/*
+
+ * Insertion at the beginning
+
+ */
+
+void double_llist::add_begin(int value)
+
+{
+
+    if (start == NULL)
+
+    {
+
+        cout<<"First Create the list."<<endl;
+
+        return;
+
+    }
+
+    struct node *temp;
+
+    temp = new(struct node);
+
+    temp->prev = NULL;
+
+    temp->info = value;
+
+    temp->next = start;
+
+    start->prev = temp;
+
+    start = temp;
+
+    cout<<"Element Inserted"<<endl;
+
+}
+
+
+
+/*
+
+ * Insertion of element at a particular position
+
+ */
+
+void double_llist::add_after(int value, int pos)
+
+{
+
+    if (start == NULL)
+
+    {
+
+        cout<<"First Create the list."<<endl;
+
+        return;
+
+    }
+
+    struct node *tmp, *q;
+
+    int i;
+
+    q = start;
+
+    for (i = 0;i < pos - 1;i++)
+
+    {
+
+        q = q->next;
+
+        if (q == NULL)
+
+        {
+
+            cout<<"There are less than ";
+
+            cout<<pos<<" elements."<<endl;
+
+            return;
+
+        }
+
+    }
+
+    tmp = new(struct node);
+
+    tmp->info = value;
+
+    if (q->next == NULL)
+
+    {
+
+        q->next = tmp;
+
+        tmp->next = NULL;
+
+        tmp->prev = q;
+
+    }
+
+    else
+
+    {
+
+        tmp->next = q->next;
+
+        tmp->next->prev = tmp;
+
+        q->next = tmp;
+
+        tmp->prev = q;
+
+    }
+
+    cout<<"Element Inserted"<<endl;
+
+}
+
+
+
+/*
+
+ * Deletion of element from the list
+
+ */
+
+void double_llist::delete_element(int value)
+
+{
+
+    struct node *tmp, *q;
+
+     /*first element deletion*/
+
+    if (start->info == value)
+
+    {
+
+        tmp = start;
+
+        start = start->next;
+
+        start->prev = NULL;
+
+        cout<<"Element Deleted"<<endl;
+
+        free(tmp);
+
+        return;
+
+    }
+
+    q = start;
+
+    while (q->next->next != NULL)
+
+    {
+
+        /*Element deleted in between*/
+
+        if (q->next->info == value)
+
+        {
+
+            tmp = q->next;
+
+            q->next = tmp->next;
+
+            tmp->next->prev = q;
+
+            cout<<"Element Deleted"<<endl;
+
+            free(tmp);
+
+            return;
+
+        }
+
+        q = q->next;
+
+    }
+
+     /*last element deleted*/
+
+    if (q->next->info == value)
+
+    {
+
+        tmp = q->next;
+
+        free(tmp);
+
+        q->next = NULL;
+
+        cout<<"Element Deleted"<<endl;
+
+        return;
+
+    }
+
+    cout<<"Element "<<value<<" not found"<<endl;
+
+}
+
+
+
+/*
+
+ * Display elements of Doubly Link List
+
+ */
+
+void double_llist::display_dlist()
+
+{
+
+    struct node *q;
+
+    if (start == NULL)
+
+    {
+
+        cout<<"List empty,nothing to display"<<endl;
+
+        return;
+
+    }
+
+    q = start;
+
+    cout<<"The Doubly Link List is :"<<endl;
+
+    while (q != NULL)
+
+    {
+
+        cout<<q->info<<" <-> ";
+
+        q = q->next;
+
+    }
+
+    cout<<"NULL"<<endl;
+
+}
+
+
+
+
+
+
+
+cout<<"Enter the element: ";
+
+            cin>>element;
+
+            dl.create_list(element);
+
+            cout<<endl;
+
+
+
+cout<<"Enter the element: ";
+
+            cin>>element;
+
+            dl.add_begin(element);
+
+            cout<<endl;
+
+
+
+cout<<"Enter the element: ";
+
+            cin>>element;
+
+            dl.add_begin(element);
+
+            cout<<endl;
+
+
+
+cout<<"Enter the element: ";
+
+            cin>>element;
+
+            cout<<"Insert Element after postion: ";
+
+            cin>>position;
+
+            dl.add_after(element, position);
+
+            cout<<endl;
+
+
+
+
+
+if (start == NULL)
+
+            {
+
+                cout<<"List empty,nothing to delete"<<endl;
+
+                break;
+
+            }
+
+            cout<<"Enter the element for deletion: ";
+
+            cin>>element;
+
+            dl.delete_element(element);
+
+            cout<<endl;
+
+
+
+
+
+dl.display_dlist();
+
+            cout<<endl;
+
+ }
