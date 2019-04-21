@@ -35,3 +35,13 @@ This project will be implemented by Branching Strategy.
 Every collaborator will create his own branch and work into that branch only and will push the file by their Branch.
 After All the three branches are pushed, the collaborators will send me a pull request and I will review their code and will merge it with my master if It is bugfree.
 
+
+
+Now, all the Branches namely :-
+
+mor,aman and Animesh_Test 
+
+are pushed respectively from their branches and now the collaborators will send me pull request and I will review it and then accept and merge the branches into the master.
+
+
+
