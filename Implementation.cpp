@@ -480,7 +480,192 @@ displayCQ();
  
 
 }
+//QUEUE  LINKED  LIST
 
  
 
-                         
+void queuelin()
+
+{
+
+ 
+
+ 
+
+struct Node
+
+{
+
+ int eno;
+
+ Node *next;
+
+}*front, *newptr, *save, *ptr, *rear;
+
+ 
+
+Node *Create_New_Node(int n)
+
+{
+
+ ptr=new Node;
+
+ ptr->eno=n;
+
+ ptr->next=NULL;
+
+ return ptr;
+
+}
+
+ 
+
+ 
+
+void Insert(Node *np)
+
+{
+
+ if (front==NULL)
+
+    {
+
+     front=rear=np;
+
+    }
+
+ else
+
+    {
+
+     rear->next=np;
+
+     rear=np;
+
+    }
+
+}
+
+ 
+
+void DelNode_Q()
+
+{
+
+ if (front==NULL)
+
+    cout<<"\nUnderflow";
+
+ else
+
+ {
+
+  ptr=front;
+
+  front=front->next;
+
+  delete ptr;
+
+ }
+
+}
+
+ 
+
+void Display(Node *np)
+
+{
+
+ while (np!=NULL)
+
+ {
+
+  cout<<np->eno<<"->";
+
+  np=np->next;
+
+ }
+
+ cout<<"!!!\n";
+
+}
+
+ 
+
+cout<<"\nEnter element::";
+
+    cin>>en;
+
+    newptr=Create_New_Node(en);
+
+    if (newptr==NULL)
+
+       cout<<"\nCannot create new node!!!!";
+
+    Insert(newptr);
+
+    cout<<"\nThe Linked-Queue now (front...to...rear) is ::\n";
+
+    Display(front);
+
+   
+
+cout<<"\nEnter element::";
+
+    cin>>en;
+
+    newptr=Create_New_Node(en);
+
+    if (newptr==NULL)
+
+       cout<<"\nCannot create new node!!!!";
+
+    Insert(newptr);
+
+    cout<<"\nThe Linked-Queue now (front...to...rear) is ::\n";
+
+    Display(front);
+
+   
+
+cout<<"\nEnter element::";
+
+    cin>>en;
+
+    newptr=Create_New_Node(en);
+
+    if (newptr==NULL)
+
+       cout<<"\nCannot create new node!!!!";
+
+    Insert(newptr);
+
+    cout<<"\nThe Linked-Queue now (front...to...rear) is ::\n";
+
+    Display(front);
+
+   
+
+ DelNode_Q();
+
+                 cout<<"\nThe Linked-Queue now (front...to...rear) is ::\n";
+
+                 Display(front);
+
+                 
+
+                 
+
+ Display(front);
+
+                 
+
+}
+
+
+ 
+
+                        
+
+
+
