@@ -303,9 +303,987 @@ search();
 }
 
 }
+  
+  
+  //CIRCULAR QUEUE OPERATIONS
+
+
+ 
+
+ 
+
+void circular()
+
+{
+
+    
+
+int cqueue[5];
+
+int front = -1, rear = -1, n=5;
+
+ 
+
+void insertCQ(int val) {
+
+   if ((front == 0 && rear == n-1) || (front == rear+1)) {
+
+      cout<<"Queue Overflow \n";
+
+      return;
+
+   }
+
+   if (front == -1) {
+
+      front = 0;
+
+      rear = 0;
+
+   } else {
+
+      if (rear == n - 1)
+
+      rear = 0;
+
+      else
+
+      rear = rear + 1;
+
+   }
+
+   cqueue[rear] = val ;
+
+}
+
+void deleteCQ() {
+
+   if (front == -1) {
+
+      cout<<"Queue Underflow\n";
+
+      return ;
+
+   }
+
+   cout<<"Element deleted from queue is : "<<cqueue[front]<<endl;
+
+  
+
+   if (front == rear) {
+
+      front = -1;
+
+      rear = -1;
+
+   } else {
+
+      if (front == n - 1)
+
+      front = 0;
+
+      else
+
+      front = front + 1;
+
+   }
+
+}
+
+void displayCQ() {
+
+   int f = front, r = rear;
+
+   if (front == -1) {
+
+      cout<<"Queue is empty"<<endl;
+
+      return;
+
+   }
+
+   cout<<"Queue elements are :\n";
+
+   if (f <= r) {
+
+      while (f <= r){
+
+         cout<<cqueue[f]<<" ";
+
+         f++;
+
+      }
+
+   } else {
+
+      while (f <= n - 1) {
+
+         cout<<cqueue[f]<<" ";
+
+         f++;
+
+      }
+
+      f = 0;
+
+      while (f <= r) {
+
+         cout<<cqueue[f]<<" ";
+
+         f++;
+
+      }
+
+   }
+
+   cout<<endl;
+
+}
+
+ 
+
+cout<<"Input for insertion: "<<endl;
+
+         cin>>val;
+
+         insertCQ(val);
+
+        
+
+cout<<"Input for insertion: "<<endl;
+
+         cin>>val;
+
+         insertCQ(val);
+
+       
+
+cout<<"Input for insertion: "<<endl;
+
+         cin>>val;
+
+         insertCQ(val);
+
+   
+
+deleteCQ();
+
+ 
+
+displayCQ();
+
+ 
+
+ 
+
+ 
+
+}
+  
+  
+  //QUEUE  LINKED  LIST
+
+ 
+
+void queuelin()
+
+{
+
+ 
+
+ 
+
+struct Node
+
+{
+
+ int eno;
+
+ Node *next;
+
+}*front, *newptr, *save, *ptr, *rear;
+
+ 
+
+Node *Create_New_Node(int n)
+
+{
+
+ ptr=new Node;
+
+ ptr->eno=n;
+
+ ptr->next=NULL;
+
+ return ptr;
+
+}
+
+ 
+
+ 
+
+void Insert(Node *np)
+
+{
+
+ if (front==NULL)
+
+    {
+
+     front=rear=np;
+
+    }
+
+ else
+
+    {
+
+     rear->next=np;
+
+     rear=np;
+
+    }
+
+}
+
+ 
+
+void DelNode_Q()
+
+{
+
+ if (front==NULL)
+
+    cout<<"\nUnderflow";
+
+ else
+
+ {
+
+  ptr=front;
+
+  front=front->next;
+
+  delete ptr;
+
+ }
+
+}
+
+ 
+
+void Display(Node *np)
+
+{
+
+ while (np!=NULL)
+
+ {
+
+  cout<<np->eno<<"->";
+
+  np=np->next;
+
+ }
+
+ cout<<"!!!\n";
+
+}
+
+ 
+
+cout<<"\nEnter element::";
+
+    cin>>en;
+
+    newptr=Create_New_Node(en);
+
+    if (newptr==NULL)
+
+       cout<<"\nCannot create new node!!!!";
+
+    Insert(newptr);
+
+    cout<<"\nThe Linked-Queue now (front...to...rear) is ::\n";
+
+    Display(front);
+
+   
+
+cout<<"\nEnter element::";
+
+    cin>>en;
+
+    newptr=Create_New_Node(en);
+
+    if (newptr==NULL)
+
+       cout<<"\nCannot create new node!!!!";
+
+    Insert(newptr);
+
+    cout<<"\nThe Linked-Queue now (front...to...rear) is ::\n";
+
+    Display(front);
+
+   
+
+cout<<"\nEnter element::";
+
+    cin>>en;
+
+    newptr=Create_New_Node(en);
+
+    if (newptr==NULL)
+
+       cout<<"\nCannot create new node!!!!";
+
+    Insert(newptr);
+
+    cout<<"\nThe Linked-Queue now (front...to...rear) is ::\n";
+
+    Display(front);
+
+   
+
+ DelNode_Q();
+
+                 cout<<"\nThe Linked-Queue now (front...to...rear) is ::\n";
+
+                 Display(front);
+
+                 
+
+                 
+
+ Display(front);
+
+                 
+
+}
+  
+  
+  
+  //Aman's part of code
+//
+
+
+
+
+//Stack linked list
+
+
+
+void  stacklin()
+
+{
+
+
+
+
+
+struct Node{
+
+    int value;
+
+    Node *next;
+
+};
+
+Node *top;
+
+
+
+class stack{
+
+
+
+public:
+
+    void push(int value);
+
+    void pop();
+
+    void display();
+
+};
+
+
+
+void stack :: push(int value)
+
+{
+
+    struct Node *newNode=new Node;
+
+    //fill data part
+
+    newNode->value=value;
+
+    //link part
+
+    newNode->next=top;
+
+    //make newnode as top/head
+
+    top=newNode;
+
+}
+
+void stack ::pop()
+
+{
+
+    if(top==NULL){
+
+        cout<<"List is empty!"<<endl;
+
+        return;
+
+    }
+
+    cout<<top->value<<" is removed."<<endl;
+
+    top=top->next;
+
+}
+
+void stack:: display()
+
+{
+
+if(top==NULL){
+
+        cout<<"List is empty!"<<endl;
+
+        return;
+
+    }
+
+    struct Node *temp=top;
+
+    while(temp!=NULL){
+
+        cout<<temp->value<<" ";
+
+        cout<<endl;
+
+        temp=temp->next;
+
+    }
+
+    cout<<endl;
+
+}
+
+
+
+Node n;
+
+            cout<<"Enter the element to be pushed : \n";
+
+            cin>>n.value;
+
+
+
+            //push data into the stack
+
+            s.push(n.value);
+
+
+
+Node n;
+
+            cout<<"Enter the element to be pushed : \n";
+
+            cin>>n.value;
+
+
+
+            //push data into the stack
+
+            s.push(n.value);
+
+
+
+Node n;
+
+            cout<<"Enter the element to be pushed : \n";
+
+            cin>>n.value;
+
+
+
+            //push data into the stack
+
+            s.push(n.value);
+
+
+
+
+
+            s.pop();
+
+
+
+
+
+            s.display();
+
+
+
+
+
+}
+
+
+
+//DOUBLY LINKED LIST
+
+ 
+
+void  doubly()
+
+{
+
+ 
+
+struct node
+
+{
+
+    int info;
+
+    struct node *next;
+
+    struct node *prev;
+
+}*start;
+
+ 
+
+class double_llist
+
+{
+
+    public:
+
+        void create_list(int value);
+
+        void add_begin(int value);
+
+        void add_after(int value, int position);
+
+        void delete_element(int value);
+
+        void search_element(int value);
+
+        void display_dlist();
+
+      
+
+        double_llist()
+
+        {
+
+            start = NULL; 
+
+        }
+
+};
+
+ 
+
+ 
+
+ 
+
+  /*
+
+ * Create Double Link List
+
+ */
+
+void double_llist::create_list(int value)
+
+{
+
+    struct node *s, *temp;
+
+    temp = new(struct node);
+
+    temp->info = value;
+
+    temp->next = NULL;
+
+    if (start == NULL)
+
+    {
+
+        temp->prev = NULL;
+
+        start = temp;
+
+    }
+
+    else
+
+    {
+
+        s = start;
+
+        while (s->next != NULL)
+
+            s = s->next;
+
+        s->next = temp;
+
+        temp->prev = s;
+
+    }
+
+}
+
+/*
+
+ * Insertion at the beginning
+
+ */
+
+void double_llist::add_begin(int value)
+
+{
+
+    if (start == NULL)
+
+    {
+
+        cout<<"First Create the list."<<endl;
+
+        return;
+
+    }
+
+    struct node *temp;
+
+    temp = new(struct node);
+
+    temp->prev = NULL;
+
+    temp->info = value;
+
+    temp->next = start;
+
+    start->prev = temp;
+
+    start = temp;
+
+    cout<<"Element Inserted"<<endl;
+
+}
+
+
+
+/*
+
+ * Insertion of element at a particular position
+
+ */
+
+void double_llist::add_after(int value, int pos)
+
+{
+
+    if (start == NULL)
+
+    {
+
+        cout<<"First Create the list."<<endl;
+
+        return;
+
+    }
+
+    struct node *tmp, *q;
+
+    int i;
+
+    q = start;
+
+    for (i = 0;i < pos - 1;i++)
+
+    {
+
+        q = q->next;
+
+        if (q == NULL)
+
+        {
+
+            cout<<"There are less than ";
+
+            cout<<pos<<" elements."<<endl;
+
+            return;
+
+        }
+
+    }
+
+    tmp = new(struct node);
+
+    tmp->info = value;
+
+    if (q->next == NULL)
+
+    {
+
+        q->next = tmp;
+
+        tmp->next = NULL;
+
+        tmp->prev = q;
+
+    }
+
+    else
+
+    {
+
+        tmp->next = q->next;
+
+        tmp->next->prev = tmp;
+
+        q->next = tmp;
+
+        tmp->prev = q;
+
+    }
+
+    cout<<"Element Inserted"<<endl;
+
+}
+
+
+
+/*
+
+ * Deletion of element from the list
+
+ */
+
+void double_llist::delete_element(int value)
+
+{
+
+    struct node *tmp, *q;
+
+     /*first element deletion*/
+
+    if (start->info == value)
+
+    {
+
+        tmp = start;
+
+        start = start->next;
+
+        start->prev = NULL;
+
+        cout<<"Element Deleted"<<endl;
+
+        free(tmp);
+
+        return;
+
+    }
+
+    q = start;
+
+    while (q->next->next != NULL)
+
+    {
+
+        /*Element deleted in between*/
+
+        if (q->next->info == value)
+
+        {
+
+            tmp = q->next;
+
+            q->next = tmp->next;
+
+            tmp->next->prev = q;
+
+            cout<<"Element Deleted"<<endl;
+
+            free(tmp);
+
+            return;
+
+        }
+
+        q = q->next;
+
+    }
+
+     /*last element deleted*/
+
+    if (q->next->info == value)
+
+    {
+
+        tmp = q->next;
+
+        free(tmp);
+
+        q->next = NULL;
+
+        cout<<"Element Deleted"<<endl;
+
+        return;
+
+    }
+
+    cout<<"Element "<<value<<" not found"<<endl;
+
+}
+
+
+
+/*
+
+ * Display elements of Doubly Link List
+
+ */
+
+void double_llist::display_dlist()
+
+{
+
+    struct node *q;
+
+    if (start == NULL)
+
+    {
+
+        cout<<"List empty,nothing to display"<<endl;
+
+        return;
+
+    }
+
+    q = start;
+
+    cout<<"The Doubly Link List is :"<<endl;
+
+    while (q != NULL)
+
+    {
+
+        cout<<q->info<<" <-> ";
+
+        q = q->next;
+
+    }
+
+    cout<<"NULL"<<endl;
+
+}
+
+
+
+
+
+
+
+cout<<"Enter the element: ";
+
+            cin>>element;
+
+            dl.create_list(element);
+
+            cout<<endl;
+
+
+
+cout<<"Enter the element: ";
+
+            cin>>element;
+
+            dl.add_begin(element);
+
+            cout<<endl;
+
+
+
+cout<<"Enter the element: ";
+
+            cin>>element;
+
+            dl.add_begin(element);
+
+            cout<<endl;
+
+
+
+cout<<"Enter the element: ";
+
+            cin>>element;
+
+            cout<<"Insert Element after postion: ";
+
+            cin>>position;
+
+            dl.add_after(element, position);
+
+            cout<<endl;
+
+
+
+
+
+if (start == NULL)
+
+            {
+
+                cout<<"List empty,nothing to delete"<<endl;
+
+                break;
+
+            }
+
+            cout<<"Enter the element for deletion: ";
+
+            cin>>element;
+
+            dl.delete_element(element);
+
+            cout<<endl;
+
+
+
+
+
+dl.display_dlist();
+
+            cout<<endl;
+
+ }
+
+
+
+ 
+
+                        
+
+
 
 
 //It's Animesh's code 
+
 
 //STACK ARRAY
 
@@ -682,4 +1660,3 @@ res=Remove(Queue);
 }
 
 //(END OF PROGRAM)
-
