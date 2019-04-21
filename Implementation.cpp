@@ -387,7 +387,9 @@ int push(int stack[],int &top,int ele)
 
   }
 
- 
+ cout<<"Now the Queue (Front...to...rear) is ::\n";
+
+    Display(Queue, front, rear ); 
 
   cout<<"\n Enter Item For Insertion::";
 
@@ -679,5 +681,5 @@ res=Remove(Queue);
     Display(Queue, front, rear);
 }
 
-
+//(END OF PROGRAM)
 
