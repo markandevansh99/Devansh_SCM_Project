@@ -44,4 +44,9 @@ mor,aman and Animesh_Test
 are pushed respectively from their branches and now the collaborators will send me pull request and I will review it and then accept and merge the branches into the master.
 
 
+                                                 MERGING
+                                                 
+ 1. I have accepted the pull request from Anurag Mor and I have merged it from the Master Branch as the code was very well written with proper intendation as well
+
+
 
