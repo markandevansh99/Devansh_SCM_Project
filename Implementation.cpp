@@ -306,5 +306,85 @@ search();
 
 
 
+//Aman's part of code
+//
 
+
+//Stack linked list
+
+
+
+void  stacklin()
+
+{
+
+
+
+
+
+struct Node{
+
+    int value;
+
+    Node *next;
+
+};
+
+Node *top;
+
+
+
+class stack{
+
+
+
+public:
+
+    void push(int value);
+
+    void pop();
+
+    void display();
+
+};
+
+
+
+void stack :: push(int value)
+
+{
+
+    struct Node *newNode=new Node;
+
+    //fill data part
+
+    newNode->value=value;
+
+    //link part
+
+    newNode->next=top;
+
+    //make newnode as top/head
+
+    top=newNode;
+
+}
+
+void stack ::pop()
+
+{
+
+    if(top==NULL){
+
+        cout<<"List is empty!"<<endl;
+
+        return;
+
+    }
+
+    cout<<top->value<<" is removed."<<endl;
+
+    top=top->next;
+
+}
 
