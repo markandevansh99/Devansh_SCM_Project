@@ -303,13 +303,10 @@ search();
 }
 
 }
+  
+  
+  //CIRCULAR QUEUE OPERATIONS
 
-
-
-//Aman's part of code
-//
-
-/CIRCULAR QUEUE OPERATIONS
 
  
 
@@ -482,7 +479,9 @@ displayCQ();
  
 
 }
-//QUEUE  LINKED  LIST
+  
+  
+  //QUEUE  LINKED  LIST
 
  
 
@@ -663,11 +662,12 @@ cout<<"\nEnter element::";
                  
 
 }
+  
+  
+  
+  //Aman's part of code
+//
 
-
- 
-
-                        
 
 
 
@@ -1272,3 +1272,391 @@ dl.display_dlist();
             cout<<endl;
 
  }
+
+
+
+ 
+
+                        
+
+
+
+
+//It's Animesh's code 
+
+
+//STACK ARRAY
+
+void stackarr()
+
+{
+
+int push(int[],int&,int);
+
+int pop(int[],int&);
+
+void display(int[],int);
+
+const int size=50;
+
+
+ int stack[size],item,top=-1,res,ch;
+
+//Functions
+int push(int stack[],int &top,int ele)
+
+ {
+
+  if(top==size-1)
+
+   cout<<"\nOverflow!!";
+
+   else
+
+   {
+
+    top++;
+
+    stack[top]=ele;
+
+   }
+
+ return 0;
+
+ }
+
+  int pop(int stack[],int & top)
+
+  {
+
+   int ret;
+
+   if(top==-1)
+
+   cout<<"Underflow!!";
+
+   else
+
+   {
+
+    ret=stack[top];
+
+    top--;
+
+   }
+
+   return ret;
+
+  }
+
+  void display(int stack[],int top)
+
+  {
+
+   if(top==-1)
+
+   cout<<"\n No Elements to Display";
+
+   cout<<stack[top]<<" <--"<<"\n";
+
+   for(int i=top-1;i>=0;i--)
+
+    cout<<stack[i]<<"\n";
+
+  }
+
+ cout<<"Now the Queue (Front...to...rear) is ::\n";
+
+    Display(Queue, front, rear ); 
+
+  cout<<"\n Enter Item For Insertion::";
+
+  cin>>item;
+
+  res=push(stack,top,item);
+
+  if (res==-1)
+
+   {
+
+     cout<<"Overflow!! Stack full\n";
+
+     exit(0);
+
+   }
+
+   cout<<"\n The Stack Now Is:: \n";
+
+   display(stack,top);
+
+ 
+
+cout<<"\n Enter Item For Insertion::";
+
+  cin>>item;
+
+  res=push(stack,top,item);
+
+  if (res==-1)
+
+   {
+
+     cout<<"Overflow!! Stack full\n";
+
+     exit(0);
+
+   }
+
+   cout<<"\n The Stack Now Is:: \n";
+
+   display(stack,top);
+
+ 
+
+ 
+
+cout<<"\n Enter Item For Insertion::";
+
+  cin>>item;
+
+  res=push(stack,top,item);
+
+  if (res==-1)
+
+   {
+
+     cout<<"Overflow!! Stack full\n";
+
+     exit(0);
+
+   }
+
+   cout<<"\n The Stack Now Is:: \n";
+
+   display(stack,top);
+
+  
+
+  
+
+   cout<<"\n Now Deletion of Elements Will Start..\n";
+
+   res=pop(stack,top);
+
+   if(res==-1)
+
+    {
+
+     cout<<"Underflow Condition!! \n";
+
+     exit(0);
+
+    }
+
+    else
+
+    {
+
+     cout<<"\n Element Deleted is::"<<res<<"\n";
+
+     cout<<"\n The Stack Now is ::\n";
+
+     display(stack,top);
+  
+
+     cout<<"Displaying whole stack now";
+
+      cout<<"\n The Stack Now is ::\n";
+
+  display(stack,top);
+
+
+}
+
+
+//QUEUE   ARRAY IMPLEMENTATION
+
+void queuearr()
+
+{
+
+ 
+
+ int Item, res, ch;
+
+ 
+
+const int size=50;
+
+int Queue[size], front=-1, rear=-1;
+
+ 
+
+int Insert(int Queue[], int item)
+
+{
+
+ if (rear==size-1)
+
+   return -1 ;
+
+ else if (rear==-1)
+
+    {
+
+     front=rear=0;
+
+     Queue[rear]=item;
+
+    }
+
+ else
+
+    {
+
+     rear++;
+
+     Queue[rear]=item;
+
+    }
+
+ return 0 ;
+
+}
+
+ 
+
+int Remove(int Queue[])
+
+{
+
+ int r;
+
+ if (front==-1)
+
+    return -1 ;
+
+ else
+
+ {
+
+   r=Queue[front];
+
+   if (front==rear)
+
+    front=rear=-1;
+
+   else
+
+    front++;
+
+ }
+
+ return r;
+
+}
+
+ 
+
+void Display(int Queue[], int front, int rear)
+
+{
+
+ if (front==-1)
+
+    cout<<"\n Queue Empty !!!!";
+
+   for (int i=front; i<rear; i++)
+
+      cout<<Queue[i]<<"<-";
+
+cout<<Queue[rear]<<"\n";
+
+}
+
+ 
+
+ 
+
+   cout<<"\nEnter item for insertion ::";
+
+    cin>>Item;
+
+    res=Insert(Queue, Item);
+
+    if (res==-1)
+
+       cout<<"\nOverflow!!!!";
+
+    cout<<"Now the Queue (Front...to...rear) is ::\n";
+
+    Display(Queue, front, rear );
+
+   
+
+   
+
+     cout<<"\nEnter item for insertion ::";
+
+    cin>>Item;
+
+    res=Insert(Queue, Item);
+
+    if (res==-1)
+
+       cout<<"\nOverflow!!!!";
+
+    cout<<"Now the Queue (Front...to...rear) is ::\n";
+
+    Display(Queue, front, rear );
+
+   
+
+   
+
+     cout<<"\nEnter item for insertion ::";
+
+    cin>>Item;
+
+    res=Insert(Queue, Item);
+
+    if (res==-1)
+
+       cout<<"\nOverflow!!!!";
+
+    cout<<"Now the Queue (Front...to...rear) is ::\n";
+
+    Display(Queue, front, rear );
+
+   
+
+   
+
+res=Remove(Queue);
+
+                 if (res==-1)
+
+                   cout<<"Underflow!!!!!!";
+
+                 else
+
+                 {
+
+                  cout<<"Element deleted is ::"<<res;
+
+                  cout<<"\n\n Now the Queue (front...to...rear) is :: \n";
+
+                  Display(Queue, front, rear);
+
+   
+
+   
+
+    cout<<"displaying whole queue";
+
+   
+
+    Display(Queue, front, rear);
+}
+
+//(END OF PROGRAM)
