@@ -322,9 +322,176 @@ void display(int[],int);
 const int size=50;
 
 
-
-
-
  int stack[size],item,top=-1,res,ch;
+
+//Functions
+int push(int stack[],int &top,int ele)
+
+ {
+
+  if(top==size-1)
+
+   cout<<"\nOverflow!!";
+
+   else
+
+   {
+
+    top++;
+
+    stack[top]=ele;
+
+   }
+
+ return 0;
+
+ }
+
+  int pop(int stack[],int & top)
+
+  {
+
+   int ret;
+
+   if(top==-1)
+
+   cout<<"Underflow!!";
+
+   else
+
+   {
+
+    ret=stack[top];
+
+    top--;
+
+   }
+
+   return ret;
+
+  }
+
+  void display(int stack[],int top)
+
+  {
+
+   if(top==-1)
+
+   cout<<"\n No Elements to Display";
+
+   cout<<stack[top]<<" <--"<<"\n";
+
+   for(int i=top-1;i>=0;i--)
+
+    cout<<stack[i]<<"\n";
+
+  }
+
+ 
+
+  cout<<"\n Enter Item For Insertion::";
+
+  cin>>item;
+
+  res=push(stack,top,item);
+
+  if (res==-1)
+
+   {
+
+     cout<<"Overflow!! Stack full\n";
+
+     exit(0);
+
+   }
+
+   cout<<"\n The Stack Now Is:: \n";
+
+   display(stack,top);
+
+ 
+
+cout<<"\n Enter Item For Insertion::";
+
+  cin>>item;
+
+  res=push(stack,top,item);
+
+  if (res==-1)
+
+   {
+
+     cout<<"Overflow!! Stack full\n";
+
+     exit(0);
+
+   }
+
+   cout<<"\n The Stack Now Is:: \n";
+
+   display(stack,top);
+
+ 
+
+ 
+
+cout<<"\n Enter Item For Insertion::";
+
+  cin>>item;
+
+  res=push(stack,top,item);
+
+  if (res==-1)
+
+   {
+
+     cout<<"Overflow!! Stack full\n";
+
+     exit(0);
+
+   }
+
+   cout<<"\n The Stack Now Is:: \n";
+
+   display(stack,top);
+
+  
+
+  
+
+   cout<<"\n Now Deletion of Elements Will Start..\n";
+
+   res=pop(stack,top);
+
+   if(res==-1)
+
+    {
+
+     cout<<"Underflow Condition!! \n";
+
+     exit(0);
+
+    }
+
+    else
+
+    {
+
+     cout<<"\n Element Deleted is::"<<res<<"\n";
+
+     cout<<"\n The Stack Now is ::\n";
+
+     display(stack,top);
+  
+
+     cout<<"Displaying whole stack now";
+
+      cout<<"\n The Stack Now is ::\n";
+
+  display(stack,top);
+
+
+}
+
 
 
