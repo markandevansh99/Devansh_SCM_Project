@@ -49,6 +49,8 @@ are pushed respectively from their branches and now the collaborators will send 
  1. I have accepted the pull request from Anurag Mor and I have merged it from the Master Branch as the code was very well written with proper intendation as well.
  
  2. I have accepted the pull request from Aman Gupta and I have merged his branch (aman) from the master branch as his code helped me in making my program even more updated and gave it a better shape.
+ 
+ 3. Now, the final and last merge is complete. I have accepted the pull request from Animesh Jain to merge his branch Animesh_test and all the 3 branches are now merged into the master.
 
 
 
